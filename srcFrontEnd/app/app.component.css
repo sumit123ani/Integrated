@@ -1,0 +1,111 @@
+body{
+    font-size: sans-serif;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(235, 42, 42, 0.116);
+    background-size: cover;  
+   }
+
+   ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#333;
+  }
+  
+  li {
+    float: left;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #4CAF50;
+  }
+  
+  .active {
+    background-color: #4CAF50;
+  }
+  .header
+  {
+     width: 100%;
+     background-color: rgba(240, 228, 228, 0.493);
+  }
+
+  .img1
+  {
+    float: left;
+    margin-left: 15%;
+    width: 35%;
+    height: 35%;
+    background-image: url(/assets/login_backg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+  }
+
+  .img2
+  {
+    float: right;
+    margin-right: 15%;
+    width: 35%;
+    height: 35%;
+    text-align: center;
+    background-image: url(/assets/login_backg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+  }
+
+
+  .img3
+  {
+    margin-top: 1%;
+    float: left;
+    margin-left: 15%;
+    width: 35%;
+    height: 35%;
+    background-image: url(/assets/login_backg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+  }
+
+  .img4
+  {
+    margin-top: 1%;
+    float: right;
+    margin-right: 15%;
+    width: 35%;
+    height: 35%;
+    text-align: center;
+    background-image: url(/assets/login_backg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+  }
+
+  h3{
+    color: red;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }

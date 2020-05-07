@@ -1,0 +1,75 @@
+<body>
+
+    <br><br>
+<h2>Add question</h2>
+<br>
+
+
+<form #formdata="ngForm" (ngSubmit)="createQuestion()">
+    <table align="center">
+
+         <tr>
+           <td><input class="form-control" type="text" name="search" placeholder="enter test id" [(ngModel)]="id" style="text-align: center;"></td> 
+            <td><button class="btn btn-success" type="button" (click)="getTest()">search</button></td>
+         </tr>
+        <br>
+         <br>
+         <br>
+
+          <tr>
+              <input type="number" name="id" placeholder="enter question id" [(ngModel)]="question.questionId" class="form-control" #valid1="ngModel" required pattern="[1-9][0-9][0-9][0-9]">
+              <div class="alert alert-danger" role="alert" *ngIf="valid1.invalid && valid1.touched">invalid Id</div>
+          </tr>
+<br>
+        <tr>
+            <input type="text" style="width: 300px;" name="title" placeholder="enter question title" [(ngModel)]="question.questionTitle" #valid2="ngModel" class="form-control" required>
+            <div class="alert alert-danger" role="alert" *ngIf="valid2.invalid && valid2.touched">invalid Id</div>
+        </tr>
+        <br>
+
+        <tr>
+            <input type="text" name="option1" placeholder="enter option 1" [(ngModel)]="question.option[0]" #valid3="ngModel" class="form-control" required>
+            <div class="alert alert-danger" role="alert" *ngIf="valid3.invalid && valid3.touched">option is required</div>
+        </tr>
+        <br>
+
+        <tr>
+            <input type="text" name="option2" placeholder="enter option 2" [(ngModel)]="question.option[1]" class="form-control" #valid4="ngModel" required>
+            <div class="alert alert-danger" role="alert" *ngIf="valid4.invalid && valid4.touched">option is required</div>
+        </tr>
+        <br>
+
+        <tr>
+            <input type="text" name="option3" placeholder="enter option 3" [(ngModel)]="question.option[2]" class="form-control" #valid5="ngModel" required>
+            <div class="alert alert-danger" role="alert" *ngIf="valid5.invalid && valid5.touched">option is required</div>
+        </tr>
+        <br>
+
+        <tr>
+            <input type="text" name="option4" placeholder="enter option 4" [(ngModel)]="question.option[3]" #valid6="ngModel" class="form-control" required>
+            <div class="alert alert-danger" role="alert" *ngIf="valid6.invalid && valid6.touched">option is required</div>
+        </tr>
+        <br>
+
+        <tr>
+            <input type="number" name="marks" placeholder="enter marks" [(ngModel)]="question.questionMarks" class="form-control" #valid7="ngModel" required>
+            <div class="alert alert-danger" role="alert" *ngIf="valid7.invalid && valid7.touched">required</div>
+        </tr>
+<br>
+ 
+   <tr>
+     <input type="text" name="correct answer" placeholder="enter correct answer" [(ngModel)]="question.questionAnswer" class="form-control" #valid8="ngModel" required>
+     <div class="alert alert-danger" role="alert" *ngIf="valid8.invalid && valid8.touched">required</div>
+   </tr>
+   <br>
+    </table>
+
+    <div style="text-align: center;">
+<input type="submit" name="butt"  value="collect" class="btn btn-primary" [disabled]="formdata.invalid"> 
+</div>
+
+</form>
+<br><br>
+
+<button (click)="show()">show</button>
+</body>

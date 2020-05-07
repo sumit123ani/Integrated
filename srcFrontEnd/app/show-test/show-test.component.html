@@ -1,0 +1,38 @@
+<body>
+    <br>
+    <br>
+<form class="form-inline md-form mr-auto mb-4" style="margin-left: 40%;" (ngSubmit)="submit()">
+<input class="form-control mr-sm-2" type="text" name="serching" [(ngModel)]="testType"> 
+<button class="btn aqua-gradient btn-rounded btn-sm-my-0" type="submit" >Search</button>
+
+</form>
+<br><br>
+
+
+<table class="table table-info" style="width: fit-content;" align="center">
+    <thead class="thead-dark">
+        <tr *ngIf="tests">
+            <th>id</th>
+            <th>title</th>
+            <th>duration</th>
+            <th>total marks</th>
+            <th>start time</th>
+            <th>end time</th>
+            <th>Give test</th>
+        </tr>
+    </thead>
+
+        <tr *ngFor="let tst of tests ; let i = index">
+            <td>{{tst.testId}}</td>
+            <td>{{tst.testTitle}}</td>
+            <td>{{tst.testDuration}}</td>
+            <td>{{tst.testTotalMarks}}</td>
+            <td>{{tst.startTime}}</td>
+            <td>{{tst.endTime}}</td>
+            <td><a class="btn btn-primary" routerLink="/attempTest" (click)="giveTest(i)">Give test</a></td>
+        </tr>
+    
+</table>
+
+<br><br><br><br><br><br><br><br><br><br><br>
+</body>

@@ -1,0 +1,30 @@
+<h2>Online Test Of {{test.testTitle}}</h2>
+
+<br>
+
+<table>
+
+  <tr>
+    <div class="badge badge-info">Question {{currentQuestion}} of {{noOfQuestion}}</div>
+  </tr>
+<br>
+
+<div class="">
+    <tr>
+       <td> <h4>{{currentQuestion}}. </h4></td> 
+       <td><h3 [innerHtml] = "question.questionTitle"></h3></td>
+    </tr>
+<br>
+    <tr *ngFor = "let opt of question.option">
+        <td>  <input type="radio" value="{{opt}}" name="{{opt}}" [(ngModel)]="question.chosenAnswer">  </td>
+         <td> <p>{{opt}}</p></td>
+         
+    </tr>   
+</div>
+
+</table>
+<br>
+<button class="btn btn-primary" (click) = "loadPrevQuestion()">Previous</button>&nbsp;&nbsp;
+<button class="btn btn-primary" (click) = "loadNextQuestion()">Next</button>
+<br><br>
+<button class="btn btn-primary" (click) = "submitTest()" routerLink="/viewResult">submit test</button>

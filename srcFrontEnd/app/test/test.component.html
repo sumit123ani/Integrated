@@ -1,0 +1,53 @@
+
+<body>
+    <br>
+    <br>
+<h2> Add test</h2>
+<br>
+<form #formdata="ngForm" novalidate (ngSubmit)="createTest()">
+
+<table align="center">
+
+   <tr>
+       <input type="number" name="id" [(ngModel)]="test.testId" placeholder="enter test id" class="form-control" #valid1 = "ngModel" required pattern="[1-9][0-9][0-9]">
+       <div class="alert alert-danger" role="alert" *ngIf="valid1.invalid && valid1.touched">invalid Id</div>
+
+   </tr>
+   <br>
+
+   <tr>
+    <input type="text" name="name" [(ngModel)]="test.testTitle" placeholder="enter test title" class="form-control" #valid2="ngModel" required>
+    <div class="alert alert-danger" role="alert" *ngIf="valid2.invalid && valid2.touched">Please enter title</div>
+</tr>
+<br>
+
+<tr>
+    <input type="text" name="duration" [(ngModel)]="test.testDuration" placeholder="enter test duration" class="form-control" #valid3="ngModel" required pattern="[0-1][0-9][:][0-9][0-9]">
+    <div class="alert alert-danger" role="alert" *ngIf="valid3.invalid && valid3.touched">invalid Duration</div>
+
+</tr>
+<br>
+
+<tr>
+    <input type="datetime-local" name="start" [(ngModel)]="test.startTime" placeholder="enter test start Time" #valid4="ngModel" class="form-control" required>
+   <div class="alert alert-danger" role="alert" *ngIf="valid4.invalid && valid4.touched">invalid start time</div>
+</tr>
+<br>
+
+<tr>
+    <input type="datetime-local" name="end" [(ngModel)]="test.endTime" placeholder="enter test endd Time" class="form-control" #valid5="ngModel" required >
+    <div class="alert alert-danger" role="alert" *ngIf="valid5.invalid && valid5.touched">invalid end time</div>
+</tr>
+<br>
+<br>
+
+</table>
+
+<br>
+<div style="text-align: center;">
+<input type="submit" name="butt" class="btn btn-primary" [disabled] = "formdata.invalid">
+</div>
+
+</form>
+<br><br>
+</body>

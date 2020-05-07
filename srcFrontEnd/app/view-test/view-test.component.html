@@ -1,0 +1,35 @@
+<body>
+
+<div style="text-align: center;">
+    <h3>View All Test</h3>
+</div>
+<br>
+<br>
+
+<table style="width: fit-content;" class="table table-info" align="center">
+    <thead>
+    <tr class="table-active">
+        <th>Id</th>
+        <th>Test Title</th>
+        <th>Total Marks</th>
+        <th>Test Duration</th>
+        <th>starting Time</th>
+        <th>Ending Time</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+</thead>
+    <tr *ngFor="let tst of tests ; let i = index" class="table-info">
+        <td>{{tst.testId}}</td>
+        <td>{{tst.testTitle}}</td>
+        <td>{{tst.testTotalMarks}}</td>
+        <td>{{tst.testDuration}}</td>
+    
+        <td>{{tst.startTime}}</td>
+        <td>{{tst.endTime}}</td>
+        <td><a class="btn btn-danger" (click)="deleteTest(i)">Delete</a></td>
+        <td><a class="btn btn-primary" routerLink="/updateTest" (click)="updateTest(i)">Update</a></td>
+    </tr>
+
+</table>
+</body>

@@ -1,0 +1,78 @@
+
+
+<div class="header" *ngIf="service.isUserLoggedIn()">
+  <h2 style="text-align: center;">Virtual Tech Quiz<img src="assets/image4.jpg" width="7%" height="7%" style="margin-left: 10px;">
+    <h2 style="display: inline; margin-left: 1%;">welcome {{service.getUser().userName}}</h2>
+    <button  class="btn btn-danger" (click)="logout()" style="float: right; margin: 2%;"><img src="assets/arrow.png"></button></h2>
+  </div>
+
+<div *ngIf="service.isUserLoggedIn() && service.getUser().isAdmin">
+
+  <ul class="col-sm-12">
+  <li><a  class="nav-item nav-link text-white" routerLink="/" (click)="changeFlag1()">Home</a></li>
+  <li><a  class="nav-item nav-link text-white" routerLink="/test" (click)="changeFlag()">Create Test</a></li>
+  <li><a  class="nav-item nav-link text-white" routerLink="/question" (click)="changeFlag()">Create Question</a></li>
+  <li><a  class="nav-item nav-link text-white" routerLink="/showQuestion" (click)="changeFlag()">Show Question</a></li>
+  
+</ul>
+</div>
+
+<div *ngIf="service.isUserLoggedIn() && !service.getUser().isAdmin">
+    <nav class="col-sm-12 row p-2 bg-dark text-white">
+       
+      <a class="nav-item nav-link text-white" routerLink="" (click)="changeFlag1()">Home</a>
+      <a  class="nav-item nav-link text-white" routerLink="/showTest" (click)="changeFlag()">Show Test</a>
+      <a class="nav-item nav-link text-white" routerLink="/viewResult" (click)="changeFlag()">View Result</a>
+      
+
+    </nav>
+</div>
+
+  <router-outlet></router-outlet> 
+
+  <body *ngIf="service.isUserLoggedIn() && flag">
+    <br><br>
+    <div  *ngIf ="service.getUser().isAdmin && flag">
+  <div  class="img1" style="text-align: center;" routerLink="/test" (click)="changeFlag()">
+    
+      <img src="assets/social.png" alt="not found" width="100px" height="100px" style="margin-top: 5%;">
+      <h3>Add Test</h3>
+  </div>
+  <div  class="img2" style="text-align: center;" routerLink="/question" (click)="changeFlag()">
+    
+      <img src="assets/talk.png" alt="not found" width="100px" height="100px" style="margin-top: 5%;">
+      <h3>Add Question</h3>
+  </div>
+
+  <br><br><br>
+
+  <div  class="img3"  style="text-align: center;" routerLink="/viewTest" (click)="changeFlag()">
+    
+    <img src="assets/test.png" alt="not found" width="100px" height="100px" style="margin-top: 5%;">
+    <h3>Show All Test</h3>
+  </div>
+  <div  class="img4"  style="text-align: center;" routerLink="/showQuestion" (click)="changeFlag()">
+  
+    <img src="assets/interface.png" alt="not found" width="100px" height="100px" style="margin-top: 5%;">
+    <h3>Show All Question</h3>
+</div>
+
+</div>
+
+<br><br><br>
+  
+  <div  *ngIf ="!service.getUser().isAdmin && flag">
+   <div  class="img1" style="text-align: center;" routerLink="/showTest" (click)="changeFlag()">
+  
+    <img src="assets/test.png" alt="not found" width="100px" height="100px" style="margin-top: 5%;">
+    <h3>Show All Exam</h3>
+    </div>
+
+<div  class="img2" style="text-align: center;" routerLink="/viewResult" (click)="changeFlag()">
+  
+    <img src="assets/interface.png" alt="not found" width="100px" height="100px" style="margin-top: 5%;">
+    <h3>Show Result</h3>
+</div>
+</div>
+
+</body>

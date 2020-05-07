@@ -1,0 +1,46 @@
+<body>
+
+    <br><br>
+<div>
+   <h2 style="float: left; margin-left: 3%;">Recently Attempted Test - {{title}}</h2>
+   <h4 style="float: right; margin-right: 3%;">Marks Obtain {{totalScore}}/{{totalMarks}}</h4>
+   <br>
+<br>
+<br>
+</div>
+
+<table class="table table-info" align="center" style="width: fit-content;">
+    <thead class="thead-dark">
+    <tr>
+       <th>Test Id</th>
+       <th>Test Title</th>
+       
+       <th>show</th> 
+    </tr>
+</thead>
+    <tr *ngFor="let tst of tests; let res of results; let j =index">
+        <td>{{res.testId}}</td>
+        <td>{{res.testTitle}}</td>
+        <td><button class="btn btn-primary" (click)="show(j)">Show Test</button></td>
+
+    </tr>
+</table>
+
+<!-- <table>
+    <div *ngFor="let quest of questions; let i = index">
+    <tr>
+        <td><h4>{{currentQuestion+i+1}}. </h4></td>
+        <td><h3>{{quest.questionTitle}}</h3></td>
+    </tr>
+    <br>
+    <tr *ngFor="let opt of quest.option">
+         <td><input type="radio" value="{{opt}}" name="{{opt}}" [(ngModel)]="quest.chosenAnswer"> </td>
+         <td> {{opt}}</td>
+    </tr>
+
+</div> -->
+<!-- </table> -->
+
+<br><br><br><br><br><br><br><br><br><br>
+
+</body>

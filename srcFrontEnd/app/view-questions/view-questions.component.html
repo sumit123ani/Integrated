@@ -1,0 +1,27 @@
+<body>
+
+    <br>
+    <br>
+<table class="table table-info" style="width: fit-content;" align="center">
+    <thead class="table-active">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Total Marks</th>
+        <th>Correct Answer</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+</thead>
+
+    <tr *ngFor="let quest of questions; let i = index">
+          <td>{{quest.questionId}}</td>
+          <td>{{quest.questionTitle}}</td>
+          <td>{{quest.questionMarks}}</td>
+          <td>{{quest.questionAnswer}}</td>
+          <td><a class="btn btn-danger" (click)="delete(i)">Delete</a></td>
+          <td><a class="btn btn-success" (click)="update(i)" routerLink="/updateQuestion">Update</a></td>
+    </tr>
+
+</table>
+</body>
